@@ -3,34 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Siddharth Majhi | Forward Deployed & Senior AI/LLM Systems Engineer</title>
-  <meta name="description" content="Portfolio of Siddharth Majhi — Senior AI & Platform Engineer with 7+ years building enterprise LLM pipelines, autonomous agentic workflows, and cloud-native microservices." />
-  
-  <!-- Fonts: Space Grotesk + JetBrains Mono for Cyber/Silicon Valley Tech Aesthetic -->
+  <title>Siddharth Majhi | Senior Software Engineer & AI Systems Architect</title>
+  <meta name="description" content="Portfolio of Siddharth Majhi — Senior Software Engineer with 7+ years of experience architecting enterprise AI platforms, LLM pipelines, and cloud-native microservices." />
+
+  <!-- Fonts: Inter (Industry Standard) + JetBrains Mono (Technical Tags) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #04070e;
-      --bg-surface: #080d18;
-      --bg-card: rgba(11, 18, 33, 0.75);
-      --bg-card-hover: rgba(16, 26, 48, 0.85);
-      --border: #152238;
-      --border-glow: rgba(0, 255, 157, 0.2);
-      --border-cyan: rgba(0, 240, 255, 0.25);
-      --text: #e6edf3;
-      --text-muted: #8b9bb4;
-      --text-dim: #546682;
-      --green: #00ff9d;
-      --green-glow: rgba(0, 255, 157, 0.15);
-      --cyan: #00f0ff;
-      --cyan-glow: rgba(0, 240, 255, 0.12);
-      --purple: #a855f7;
-      --amber: #f59e0b;
-      --red: #ef4444;
-      --font-display: 'Space Grotesk', -apple-system, sans-serif;
+      --bg: #090d16;
+      --bg-surface: #0e1422;
+      --bg-surface-hover: #131b2e;
+      --bg-card: rgba(14, 20, 34, 0.7);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(59, 130, 246, 0.4);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --accent-subtle: rgba(59, 130, 246, 0.1);
+      --emerald: #10b981;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
@@ -46,231 +42,187 @@
 
     body {
       background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-display);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
       line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Interactive Matrix Canvas Background */
-    #matrixCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.18;
-    }
-
-    /* CRT Scanline Overlay */
-    .crt-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
-      background-size: 100% 3px, 6px 100%;
-      opacity: 0.7;
-    }
-
-    .content-layer {
-      position: relative;
-      z-index: 2;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 70%, rgba(99, 102, 241, 0.03) 0%, transparent 40%);
+      background-attachment: fixed;
     }
 
     .container {
-      max-width: 1180px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
     }
 
-    /* Top Command Nav */
-    /* Top Command Nav */
+    /* Top Navigation */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      background: rgba(4, 7, 14, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 13, 22, 0.85);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 84px;
+      height: 76px;
     }
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-family: var(--font-mono);
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--text);
+      gap: 12px;
       text-decoration: none;
-      letter-spacing: -0.01em;
+      color: var(--text-primary);
     }
-    .brand-prompt {
-      color: var(--green);
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
-    .brand-tag {
-      background: rgba(0, 255, 157, 0.08);
-      border: 1px solid var(--border-glow);
-      color: var(--green);
-      font-size: 0.72rem;
-      padding: 4px 10px;
+    .brand-badge {
+      font-size: 0.75rem;
+      background: var(--accent-subtle);
+      color: var(--accent-light);
+      padding: 3px 8px;
       border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-weight: 500;
+      border: 1px solid rgba(59, 130, 246, 0.2);
     }
     .nav-links {
       display: flex;
-      gap: 36px;
       align-items: center;
-      font-family: var(--font-mono);
-      font-size: 0.88rem;
+      gap: 32px;
     }
     .nav-links a {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       text-decoration: none;
-      transition: all 0.2s;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
     .nav-links a:hover {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan-glow);
+      color: var(--text-primary);
     }
-    .nav-btn {
-      background: transparent;
-      border: 1px solid var(--cyan);
-      color: var(--cyan) !important;
-      padding: 9px 20px;
+    .btn-nav {
+      background: #ffffff;
+      color: #090d16 !important;
+      padding: 8px 18px;
       border-radius: 6px;
       font-weight: 600;
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+      font-size: 0.88rem;
       transition: all 0.2s;
     }
-    .nav-btn:hover {
-      background: var(--cyan);
-      color: #04070e !important;
-      box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+    .btn-nav:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
     }
 
-    /* Hero Section - Untangled Spacing */
+    /* Hero Section */
     .hero {
-      padding: 110px 0 75px;
+      padding: 100px 0 80px;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.35fr 0.85fr;
-      gap: 72px;
+      gap: 64px;
       align-items: center;
     }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--accent-light);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
     .hero h1 {
-      font-size: 3.8rem;
-      font-weight: 700;
+      font-size: 3.4rem;
+      font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.03em;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      color: var(--text-primary);
     }
-    .hero-accent {
-      background: linear-gradient(135deg, #00ff9d 0%, #00f0ff 50%, #a855f7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(0, 255, 157, 0.2);
-    }
-    .hero-title-sub {
-      font-family: var(--font-mono);
-      font-size: 1.3rem;
-      color: var(--cyan);
-      margin-bottom: 26px;
+    .hero-title-role {
+      font-size: 1.35rem;
+      color: var(--text-secondary);
       font-weight: 500;
+      margin-bottom: 24px;
       letter-spacing: -0.01em;
     }
-    .hero-summary {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      line-height: 1.85;
-      margin-bottom: 28px;
-      max-width: 680px;
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 620px;
     }
-    .hero-summary b {
-      color: var(--text);
+    .hero-description strong {
+      color: var(--text-primary);
       font-weight: 600;
     }
     .hero-actions {
       display: flex;
-      gap: 18px;
+      align-items: center;
+      gap: 16px;
       flex-wrap: wrap;
-      margin-top: 10px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
+      gap: 8px;
+      padding: 12px 24px;
       border-radius: 6px;
-      font-family: var(--font-mono);
       font-size: 0.92rem;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s;
     }
-    .btn-cyber {
-      background: var(--green);
-      color: #04070e;
-      border: 1px solid var(--green);
-      box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+    .btn-primary {
+      background: #ffffff;
+      color: #090d16;
+      border: 1px solid #ffffff;
     }
-    .btn-cyber:hover {
-      background: #33ffb1;
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
+    .btn-primary:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
     }
-    .btn-outline {
-      background: rgba(11, 18, 33, 0.6);
-      color: var(--text);
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text-primary);
       border: 1px solid var(--border);
     }
-    .btn-outline:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+    .btn-secondary:hover {
+      background: var(--bg-surface-hover);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Profile Avatar Card */
-    .avatar-card {
-      position: relative;
+    /* Avatar Frame */
+    .avatar-container {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .avatar-glow {
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      border-radius: 20px;
-      background: radial-gradient(circle, rgba(0, 255, 157, 0.16), rgba(0, 240, 255, 0.08), transparent 70%);
-      filter: blur(40px);
-      z-index: 1;
-    }
-    .avatar-frame {
+    .avatar-wrapper {
       position: relative;
-      z-index: 2;
       width: 290px;
       height: 290px;
-      border-radius: 14px;
-      border: 1px solid var(--border-glow);
-      background: #080d18;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 255, 157, 0.12);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      background: var(--bg-surface);
     }
     .avatar-img {
       width: 100%;
@@ -279,1005 +231,859 @@
       object-position: center 15%;
       display: block;
     }
-    .avatar-specs {
-      position: relative;
-      z-index: 2;
-      margin-top: 18px;
+    .avatar-caption {
+      margin-top: 14px;
       width: 290px;
-      background: rgba(8, 13, 24, 0.85);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 18px;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--text-dim);
       display: flex;
       justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
     }
 
-    /* Enterprise Stats Bar */
-    .stats-bar {
+    /* Executive Metrics Strip */
+    .metrics-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
-      margin: 80px 0 100px;
+      margin: 20px 0 100px;
     }
-    .stat-card {
+    .metric-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 22px;
-      backdrop-filter: blur(8px);
-      transition: all 0.25s;
+      padding: 24px;
+      transition: border-color 0.2s;
     }
-    .stat-card:hover {
-      border-color: var(--cyan);
-      box-shadow: 0 0 20px var(--cyan-glow);
+    .metric-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
     }
-    .stat-num {
-      font-family: var(--font-mono);
-      font-size: 2.1rem;
+    .metric-number {
+      font-size: 2.2rem;
       font-weight: 700;
-      color: var(--cyan);
-      margin-bottom: 4px;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
     }
-    .stat-label {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
+    .metric-title {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      line-height: 1.4;
     }
 
-    /* Section Headers */
-    .section-title-wrap {
-      margin-bottom: 40px;
+    /* Section Styling */
+    section {
+      margin-bottom: 110px;
     }
-    .section-mono-tag {
-      font-family: var(--font-mono);
-      color: var(--green);
+    .section-header {
+      margin-bottom: 48px;
+    }
+    .section-eyebrow {
       font-size: 0.8rem;
-      letter-spacing: 0.1em;
+      color: var(--accent-light);
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       display: block;
     }
-    .section-h2 {
-      font-size: 2.3rem;
+    .section-heading {
+      font-size: 2.1rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: var(--text-primary);
     }
-    .section-sub {
-      color: var(--text-muted);
-      margin-top: 8px;
+    .section-desc {
+      color: var(--text-secondary);
       font-size: 1rem;
-      max-width: 680px;
+      margin-top: 8px;
+      max-width: 650px;
     }
 
-    /* Flagship Architectural Case Studies */
-    .systems-list {
+    /* Flagship Systems Cards */
+    .systems-grid {
       display: flex;
       flex-direction: column;
       gap: 32px;
-      margin-bottom: 90px;
     }
-    .sys-card {
+    .system-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 34px;
+      border-radius: 12px;
+      padding: 36px;
       display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
+      grid-template-columns: 1.35fr 0.85fr;
       gap: 36px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s;
-      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
     }
-    .sys-card:hover {
-      border-color: var(--border-cyan);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.08);
+    .system-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
       transform: translateY(-2px);
     }
-    .sys-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--green), var(--cyan));
-    }
-    .sys-type {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--green);
-      background: rgba(0, 255, 157, 0.07);
-      border: 1px solid var(--border-glow);
+    .system-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      background: var(--accent-subtle);
+      border: 1px solid rgba(59, 130, 246, 0.2);
       padding: 4px 10px;
       border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 12px;
-      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
-    .sys-name {
-      font-size: 1.65rem;
+    .system-title {
+      font-size: 1.55rem;
       font-weight: 700;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
     }
-    .sys-name a {
-      color: var(--text);
+    .system-title a {
+      color: var(--text-primary);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .sys-name a:hover {
-      color: var(--cyan);
+    .system-title a:hover {
+      color: var(--accent-light);
     }
-    .sys-desc {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-      line-height: 1.68;
-      margin-bottom: 22px;
+    .system-summary {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
-    .tag-cluster {
+    .tech-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-bottom: 24px;
     }
-    .tag {
+    .tech-pill {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 3px 9px;
+      font-size: 0.78rem;
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      padding: 4px 10px;
       border-radius: 4px;
-    }
-    .sys-metrics-box {
-      background: rgba(5, 9, 18, 0.75);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 22px;
+    }
+    .system-stats-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .metric-row {
+    .stat-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-      font-size: 0.88rem;
-    }
-    .metric-row:last-child {
-      border-bottom: none;
-    }
-    .m-key {
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-    }
-    .m-val {
-      font-family: var(--font-mono);
-      font-weight: 700;
-      color: var(--green);
-    }
-
-    /* System Postmortem & Trade-off Badges */
-    .system-postmortem {
-      grid-column: 1 / -1;
-      background: rgba(4, 7, 14, 0.95);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 18px;
-      border-left: 3px solid var(--cyan);
-    }
-    .pm-label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--cyan);
-      margin-bottom: 5px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .pm-desc {
-      font-size: 0.86rem;
-      color: #94a3b8;
-      line-height: 1.55;
-    }
-    .hero-philosophy {
-      background: rgba(0, 240, 255, 0.03);
-      border-left: 3px solid var(--cyan);
-      padding: 18px 24px;
-      font-family: var(--font-mono);
-      font-size: 0.88rem;
-      line-height: 1.75;
-      color: #94a3b8;
-      margin: 32px 0 36px;
-      border-radius: 0 8px 8px 0;
-      border-top: 1px solid rgba(0, 240, 255, 0.08);
-      border-bottom: 1px solid rgba(0, 240, 255, 0.08);
-      border-right: 1px solid rgba(0, 240, 255, 0.08);
-      max-width: 680px;
-    }
-    .hero-philosophy span {
-      color: var(--cyan);
-      font-weight: 700;
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.76rem;
-      letter-spacing: 0.06em;
-    }
-
-    @media (max-width: 900px) {
-      .system-postmortem { grid-template-columns: 1fr; }
-    }
-
-    /* Terminal Simulation Box */
-    .terminal-window {
-      background: #060911;
-      border: 1px solid var(--border-glow);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 90px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 255, 157, 0.07);
-    }
-    .term-bar {
-      background: #0d1424;
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
       border-bottom: 1px solid var(--border);
     }
-    .term-btn {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
+    .stat-row:last-child {
+      border-bottom: none;
     }
-    .term-close { background: #ff5f56; }
-    .term-min { background: #ffbd2e; }
-    .term-max { background: #27c93f; }
-    .term-label {
+    .stat-label {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+    .stat-val {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.92rem;
       font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: var(--text-dim);
-      margin-left: 6px;
     }
-    .term-content {
-      padding: 24px;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--green);
+    .system-details {
+      grid-column: 1 / -1;
+      background: rgba(9, 13, 22, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 12px;
     }
-    .cmd-line { margin-bottom: 14px; }
-    .term-out {
+    .detail-heading {
+      font-size: 0.75rem;
+      font-weight: 600;
       color: var(--text-muted);
-      margin: 6px 0 16px;
-      padding-left: 14px;
-      border-left: 2px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
     }
-    .term-highlight { color: var(--cyan); }
+    .detail-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
 
-    /* Work History / Experience (From Verified Resume) */
-    .experience-list {
+    /* Experience Timeline */
+    .experience-container {
       display: flex;
       flex-direction: column;
-      gap: 26px;
-      margin-bottom: 90px;
+      gap: 24px;
     }
-    .exp-item {
+    .experience-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 30px;
-      backdrop-filter: blur(8px);
+      padding: 32px;
       transition: border-color 0.2s;
     }
-    .exp-item:hover {
-      border-color: var(--border-cyan);
+    .experience-card:hover {
+      border-color: rgba(255, 255, 255, 0.16);
     }
-    .exp-header {
+    .exp-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 6px;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
-    .exp-role {
-      font-size: 1.35rem;
+    .exp-role-title {
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--text);
+      color: var(--text-primary);
     }
-    .exp-company {
-      color: var(--cyan);
-      font-weight: 600;
-      font-size: 1.05rem;
+    .exp-org {
+      font-size: 1rem;
+      color: var(--accent-light);
+      font-weight: 500;
     }
-    .exp-date {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      background: rgba(255, 255, 255, 0.04);
-      padding: 4px 10px;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-    }
-    .exp-points {
-      list-style: none;
-      margin-top: 14px;
-    }
-    .exp-points li {
+    .exp-tenure {
+      font-size: 0.84rem;
       color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    .exp-duties {
+      list-style: none;
+      margin-top: 16px;
+    }
+    .exp-duties li {
+      color: var(--text-secondary);
       font-size: 0.94rem;
-      line-height: 1.65;
+      line-height: 1.7;
       padding: 5px 0;
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
-    .exp-points li::before {
-      content: '⚡';
-      color: var(--green);
-      font-size: 0.8rem;
-      flex-shrink: 0;
-      margin-top: 3px;
+    .exp-duties li::before {
+      content: '•';
+      color: var(--accent-light);
+      font-weight: bold;
     }
 
-    /* Technical Competencies Grid */
-    .skills-cluster {
+    /* Core Competencies Grid */
+    .skills-layout {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      margin-bottom: 90px;
     }
-    .skill-box {
+    .skills-group {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px;
       padding: 28px;
     }
-    .skill-box-title {
-      font-size: 1.15rem;
+    .skills-group-title {
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--cyan);
-      margin-bottom: 16px;
-      font-family: var(--font-mono);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
     }
-    .skill-items {
+    .skills-item-list {
       list-style: none;
     }
-    .skill-items li {
-      color: var(--text-muted);
+    .skills-item-list li {
+      color: var(--text-secondary);
       font-size: 0.9rem;
       padding: 6px 0;
       display: flex;
-      gap: 8px;
+      gap: 10px;
+      align-items: center;
     }
-    .skill-items li::before {
-      content: '>';
-      color: var(--green);
-      font-family: var(--font-mono);
+    .skills-item-list li::before {
+      content: '—';
+      color: var(--text-muted);
+    }
+
+    /* Education & Honors */
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 30px;
+    }
+    .info-card-title {
+      font-size: 1.05rem;
       font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .degree-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .institution-name {
+      color: var(--accent-light);
+      font-size: 0.95rem;
+      margin: 4px 0 10px;
+    }
+    .degree-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    .honors-list {
+      list-style: none;
+    }
+    .honors-list li {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      padding: 6px 0;
+      display: flex;
+      gap: 10px;
+    }
+    .honors-list li::before {
+      content: '✓';
+      color: var(--emerald);
+      font-weight: bold;
     }
 
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
-      padding: 50px 0;
-      text-align: center;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-dim);
+      padding: 60px 0 40px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
     .footer-links {
       display: flex;
-      justify-content: center;
       gap: 24px;
-      margin-bottom: 16px;
     }
     .footer-links a {
-      color: var(--text-muted);
+      color: var(--text-secondary);
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.2s;
     }
     .footer-links a:hover {
-      color: var(--green);
+      color: var(--text-primary);
     }
 
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-summary { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
-      .sys-card { grid-template-columns: 1fr; }
-      .skills-cluster { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr; text-align: left; }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .system-card { grid-template-columns: 1fr; }
+      .system-details { grid-template-columns: 1fr; }
+      .skills-layout { grid-template-columns: 1fr; }
+      .dual-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Matrix Background Canvas -->
-  <canvas id="matrixCanvas"></canvas>
-  <div class="crt-overlay"></div>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <span class="brand-name">Siddharth Majhi</span>
+        <span class="brand-badge">Senior AI & Platform Engineer</span>
+      </a>
+      <div class="nav-links">
+        <a href="#systems">Systems</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Competencies</a>
+        <a href="https://github.com/d4rk-agent-z3r0" target="_blank">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank" class="btn-nav">LinkedIn ↗</a>
+      </div>
+    </div>
+  </nav>
 
-  <div class="content-layer">
+  <main class="container">
     
-    <!-- Top Command Navigation -->
-    <nav>
-      <div class="container nav-inner">
-        <a href="#" class="nav-brand">
-          <span class="brand-prompt">&gt;</span>
-          <span>siddharth.majhi</span>
-          <span class="brand-tag">FDE / LLM Architecture</span>
-        </a>
-        <div class="nav-links">
-          <a href="#systems">// Systems</a>
-          <a href="#experience">// Experience</a>
-          <a href="#competencies">// Stack</a>
-          <a href="https://github.com/d4rk-agent-z3r0" target="_blank" class="nav-btn">GitHub Profile ↗</a>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="hero-label">Platform & AI Systems Engineering</span>
+          <h1>Siddharth Majhi</h1>
+          <div class="hero-title-role">
+            Senior Software Engineer (AI & Platform) • Systems Architect
+          </div>
+          <p class="hero-description">
+            <strong>7+ years of enterprise experience</strong> architecting high-performance RESTful APIs, distributed microservices, and applied Generative AI systems. Proven record leading monolith-to-microservice migrations (Saga, CQRS), integrating vector databases (<strong>Pinecone / ChromaDB</strong>) to accelerate model inference by 35%, and operating scalable cloud infrastructure across <strong>Giesecke+Devrient</strong>, <strong>Airtel Payments Bank</strong>, and <strong>LTIMindtree</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="#systems" class="btn btn-primary">View Flagship Systems</a>
+            <a href="#experience" class="btn btn-secondary">Career History</a>
+            <a href="mailto:yoshimitsu117@protonmail.com" class="btn btn-secondary">yoshimitsu117@protonmail.com</a>
+          </div>
+        </div>
+
+        <div class="avatar-container">
+          <div class="avatar-wrapper">
+            <img src="images/avatar.jpg" alt="Siddharth Majhi" class="avatar-img" />
+          </div>
+          <div class="avatar-caption">
+            <span>Siddharth Majhi</span>
+            <span>Gurugram, India</span>
+          </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <main class="container">
-      
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-grid">
+    <!-- Executive Metrics Strip -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-number">7+ Yrs</div>
+        <div class="metric-title">Enterprise Backend & Platform Engineering</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">35%</div>
+        <div class="metric-title">Inference Speedup via Pinecone Integration</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">94.2%</div>
+        <div class="metric-title">Ragas Faithfulness Benchmark Score</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-number">&lt; 15ms</div>
+        <div class="metric-title">Semantic Cache Response Time (Redis)</div>
+      </div>
+    </div>
+
+    <!-- Flagship Systems Section -->
+    <section id="systems">
+      <div class="section-header">
+        <span class="section-eyebrow">Architectural Implementations</span>
+        <h2 class="section-heading">Production AI Systems & Platforms</h2>
+        <p class="section-desc">Designed with automated evaluation benchmarks, fault tolerance, and production observability.</p>
+      </div>
+
+      <div class="systems-grid">
+
+        <!-- System 1: IntelliDoc RAG -->
+        <div class="system-card">
           <div>
-            <h1>
-              Siddharth <span class="hero-accent">Majhi</span>
-            </h1>
-            <div class="hero-title-sub">
-              &gt; Staff AI & Platform Engineer • Distributed Systems Architect
-            </div>
-            <p class="hero-summary">
-              <b>7+ years of engineering ownership</b> architecting high-reliability AI platforms, resilient distributed microservices, and agentic state machines. I design for the failure modes and edge cases that bring down production: <b>hallucination cascades, semantic drift, distributed lock contention, and backpressure under load</b>. Track record leading monolith-to-microservice migrations, deploying vector engines (<b>Pinecone / Vertex AI</b>), and building high-throughput low-latency systems across <b>Giesecke+Devrient</b>, <b>Airtel Payments Bank</b>, and <b>LTIMindtree</b>.
+            <span class="system-tag">Enterprise RAG & Evaluation Pipeline</span>
+            <h3 class="system-title">
+              <a href="https://github.com/d4rk-agent-z3r0/intellidoc-rag" target="_blank">IntelliDoc Enterprise RAG</a>
+            </h3>
+            <p class="system-summary">
+              High-precision document Q&A engine designed for complex enterprise disclosures (PDF/TXT) incorporating layout-aware recursive chunking, hybrid retrieval (BM25 + ChromaDB) fused via Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and automated Ragas evaluation suites.
             </p>
-            <div class="hero-philosophy">
-              <span>// ARCHITECTURAL CREED:</span> "Code is ephemeral; failure modes are eternal. If you don't bound non-deterministic models with deterministic contracts, your system owns you."
+            <div class="tech-pills">
+              <span class="tech-pill">Python 3.12</span>
+              <span class="tech-pill">ChromaDB</span>
+              <span class="tech-pill">BM25 + RRF</span>
+              <span class="tech-pill">Cross-Encoder</span>
+              <span class="tech-pill">Ragas Evals</span>
+              <span class="tech-pill">SSE Streaming</span>
             </div>
-            <div class="hero-actions">
-              <a href="#systems" class="btn btn-cyber">⚡ Explore Production Systems</a>
-              <a href="#experience" class="btn btn-outline">Career Track Record</a>
-              <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+            <a href="https://github.com/d4rk-agent-z3r0/intellidoc-rag" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">View Repository ↗</a>
+          </div>
+
+          <div class="system-stats-panel">
+            <div class="stat-row">
+              <span class="stat-label">Ragas Faithfulness</span>
+              <span class="stat-val">94.2% (+26.7% vs naive)</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Hallucination Reduction</span>
+              <span class="stat-val">-38% vs pure vector</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">p95 Latency</span>
+              <span class="stat-val">&lt; 380ms retrieval</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Security Layer</span>
+              <span class="stat-val">Role-Based Access (RBAC)</span>
             </div>
           </div>
 
-          <div class="avatar-card">
-            <div class="avatar-glow"></div>
-            <div class="avatar-frame">
-              <img src="images/avatar.jpg" alt="Siddharth Majhi - Avatar" class="avatar-img" />
-            </div>
-            <div class="avatar-specs">
-              <span>NODE: d4rk-agent-z3r0</span>
-              <span>LOC: Gurugram, India</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Production Numbers Strip -->
-      <section class="stats-bar">
-        <div class="stat-card">
-          <div class="stat-num">7+ YRS</div>
-          <div class="stat-label">Enterprise Engineering</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">35%</div>
-          <div class="stat-label">Inference Latency Cut (Pinecone)</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">94.2%</div>
-          <div class="stat-label">RAGAS Faithfulness Score</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">&lt; 15ms</div>
-          <div class="stat-label">Semantic Cache p95 Response</div>
-        </div>
-      </section>
-
-      <!-- Flagship Case Studies -->
-      <section id="systems">
-        <div class="section-title-wrap">
-          <span class="section-mono-tag">// 01. ARCHITECTURE & CASE STUDIES</span>
-          <h2 class="section-h2">Production AI Systems</h2>
-          <p class="section-sub">Engineered to solve the "Delta" — bridging real-world enterprise constraints with scalable, evaluated, and observable AI systems.</p>
-        </div>
-
-        <div class="systems-list">
-          
-          <!-- System 1: IntelliDoc RAG -->
-          <div class="sys-card">
+          <div class="system-details">
             <div>
-              <span class="sys-type">HYBRID RAG & EVALUATION PIPELINE</span>
-              <h3 class="sys-name">
-                <a href="https://github.com/d4rk-agent-z3r0/intellidoc-rag" target="_blank">IntelliDoc Enterprise RAG</a>
-              </h3>
-              <p class="sys-desc">
-                High-precision document Q&A engine built for complex enterprise documents (PDF/TXT) featuring layout-aware recursive chunking, hybrid retrieval (BM25 + ChromaDB) fused with Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and full RAGAS evaluation suites.
-              </p>
-              <div class="tag-cluster">
-                <span class="tag">Python 3.12</span>
-                <span class="tag">ChromaDB</span>
-                <span class="tag">BM25 + RRF</span>
-                <span class="tag">Cross-Encoder</span>
-                <span class="tag">Ragas Evals</span>
-                <span class="tag">SSE Streaming</span>
-                <span class="tag">RBAC</span>
-              </div>
-              <a href="https://github.com/d4rk-agent-z3r0/intellidoc-rag" target="_blank" class="btn btn-outline" style="padding: 9px 18px; font-size: 0.82rem;">Source & Benchmark ↗</a>
+              <div class="detail-heading">Technical Challenge</div>
+              <div class="detail-text">Pure cosine vector similarity caused semantic dilution on tabular disclosures and alphanumeric product codes, generating hallucinations on critical edge queries.</div>
             </div>
-
-            <div class="sys-metrics-box">
-              <div class="metric-row">
-                <span class="m-key">RAGAS Faithfulness</span>
-                <span class="m-val">94.2% (+26.7% vs naive)</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Hallucination Delta</span>
-                <span class="m-val">-38% vs pure vector</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">p95 Latency</span>
-                <span class="m-val">&lt; 380ms retrieval</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Access Layer</span>
-                <span class="m-val">Multi-tenant RBAC</span>
-              </div>
-            </div>
-
-            <div class="system-postmortem">
-              <div class="postmortem-item">
-                <span class="pm-label">Critical Failure Mode Eliminated</span>
-                <span class="pm-desc">Cosine similarity dilution on tabular disclosures and alphanumeric product codes; prevented factual hallucination via deterministic BM25 lexical fusion.</span>
-              </div>
-              <div class="postmortem-item">
-                <span class="pm-label">System Compromise & Trade-Off</span>
-                <span class="pm-desc">Incurred +65ms p95 latency overhead for cross-encoder reranking in exchange for +26.7% gain in answer faithfulness and context precision.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- System 2: Pinecone Vector System at Scale -->
-          <div class="sys-card">
             <div>
-              <span class="sys-type">ENTERPRISE VECTOR SEARCH INTEGRATION</span>
-              <h3 class="sys-name">
-                <span>Cloud-Native Vector Engine & Vertex AI</span>
-              </h3>
-              <p class="sys-desc">
-                Engineered vector database integration into cloud-native enterprise airline systems using Pinecone and Google Cloud Vertex AI, accelerating ML model inference by 35% across 5 production microservices with gRPC communication and Google Pub/Sub event streaming.
-              </p>
-              <div class="tag-cluster">
-                <span class="tag">Pinecone Vector DB</span>
-                <span class="tag">Google Vertex AI</span>
-                <span class="tag">gRPC</span>
-                <span class="tag">Google Pub/Sub</span>
-                <span class="tag">Google Datastore</span>
-                <span class="tag">Kubernetes</span>
-              </div>
-              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--green);">[Delivered at LTIMindtree Airline Domain]</span>
+              <div class="detail-heading">Architectural Solution</div>
+              <div class="detail-text">Implemented dual-stage retrieval fusing BM25 lexical recall with dense embeddings via Reciprocal Rank Fusion, followed by Cross-Encoder scoring.</div>
             </div>
+          </div>
+        </div>
 
-            <div class="sys-metrics-box">
-              <div class="metric-row">
-                <span class="m-key">Inference Speedup</span>
-                <span class="m-val">35% Acceleration</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Scope</span>
-                <span class="m-val">5 Production Microservices</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Protocol</span>
-                <span class="m-val">gRPC Inter-service Comm</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Architecture</span>
-                <span class="m-val">Event-Driven Asynchronous</span>
-              </div>
+        <!-- System 2: Pinecone Vector System at Scale -->
+        <div class="system-card">
+          <div>
+            <span class="system-tag">Enterprise Vector Search Integration</span>
+            <h3 class="system-title">Cloud-Native Vector Engine & Vertex AI</h3>
+            <p class="system-summary">
+              Engineered vector database integration into cloud-native airline systems using Pinecone and Google Cloud Vertex AI, accelerating ML model inference by 35% across 5 production microservices with gRPC communication and Google Pub/Sub event streaming.
+            </p>
+            <div class="tech-pills">
+              <span class="tech-pill">Pinecone</span>
+              <span class="tech-pill">Google Cloud Vertex AI</span>
+              <span class="tech-pill">gRPC</span>
+              <span class="tech-pill">Google Pub/Sub</span>
+              <span class="tech-pill">Google Datastore</span>
+              <span class="tech-pill">Kubernetes</span>
             </div>
+            <span style="font-size: 0.85rem; color: var(--accent-light); font-weight: 500;">Delivered at LTIMindtree (Airline Domain)</span>
+          </div>
 
-            <div class="system-postmortem">
-              <div class="postmortem-item">
-                <span class="pm-label">Critical Failure Mode Eliminated</span>
-                <span class="pm-desc">Cold-start inference latency bottlenecks and inter-service HTTP serialization overhead across 5 critical flight-ops microservices.</span>
-              </div>
-              <div class="postmortem-item">
-                <span class="pm-label">System Compromise & Trade-Off</span>
-                <span class="pm-desc">Shifted from simple REST to strict Protobuf/gRPC contracts; increased schema versioning overhead but cut network serialization payloads by 60%.</span>
-              </div>
+          <div class="system-stats-panel">
+            <div class="stat-row">
+              <span class="stat-label">Inference Acceleration</span>
+              <span class="stat-val">35% Speedup</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Production Scope</span>
+              <span class="stat-val">5 Microservices</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Inter-Service Protocol</span>
+              <span class="stat-val">gRPC / Protobuf</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Message Bus</span>
+              <span class="stat-val">Google Cloud Pub/Sub</span>
             </div>
           </div>
 
-          <!-- System 3: Autonomous Agent Workflows -->
-          <div class="sys-card">
+          <div class="system-details">
             <div>
-              <span class="sys-type">AGENTIC STATE MACHINE & TOOL ORCHESTRATION</span>
-              <h3 class="sys-name">
-                <a href="https://github.com/d4rk-agent-z3r0/agentforge" target="_blank">AgentForge & CodeSentinel</a>
-              </h3>
-              <p class="sys-desc">
-                Autonomous issue-to-pull-request engine built with cyclic LangGraph state machines. Features tool sandboxing for git operations, static code analysis (Ruff/Flake8), automated test execution, and human-in-the-loop checkpoints before any destructive action is taken.
-              </p>
-              <div class="tag-cluster">
-                <span class="tag">LangGraph</span>
-                <span class="tag">Cyclic State Machine</span>
-                <span class="tag">Sandboxed Execution</span>
-                <span class="tag">Human-in-the-Loop</span>
-                <span class="tag">Git Automation</span>
-              </div>
-              <a href="https://github.com/d4rk-agent-z3r0/agentforge" target="_blank" class="btn btn-outline" style="padding: 9px 18px; font-size: 0.82rem;">Inspect Agent Graph ↗</a>
+              <div class="detail-heading">Technical Challenge</div>
+              <div class="detail-text">Legacy HTTP serialization and monolithic database querying produced unacceptable latency bottlenecks during peak passenger search spikes.</div>
             </div>
-
-            <div class="sys-metrics-box">
-              <div class="metric-row">
-                <span class="m-key">Task Resolution</span>
-                <span class="m-val">78% Synthetic Benchmark</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">State Rollback</span>
-                <span class="m-val">Checkpointed Persistence</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Safety Guardrails</span>
-                <span class="m-val">Zero unverified commits</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Self-Healing</span>
-                <span class="m-val">3x Cyclic Error Retry</span>
-              </div>
-            </div>
-
-            <div class="system-postmortem">
-              <div class="postmortem-item">
-                <span class="pm-label">Critical Failure Mode Eliminated</span>
-                <span class="pm-desc">Unbounded ReAct execution loops burning tokens on failing unit tests; isolated failures via sandboxed execution and enforced a 3x retry rollback ceiling.</span>
-              </div>
-              <div class="postmortem-item">
-                <span class="pm-label">System Compromise & Trade-Off</span>
-                <span class="pm-desc">Sacrificed full autonomous deployment velocity in favor of deterministic human-in-the-loop checkpoints before any git push or PR merge.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- System 4: StreamChat AI Gateway -->
-          <div class="sys-card">
             <div>
-              <span class="sys-type">HIGH-THROUGHPUT INFERENCE GATEWAY</span>
-              <h3 class="sys-name">
-                <a href="https://github.com/d4rk-agent-z3r0/streamchat-ai" target="_blank">StreamChat AI Gateway</a>
-              </h3>
-              <p class="sys-desc">
-                Production-grade async FastAPI middleware for LLM inference management. Includes Redis semantic vector caching for sub-15ms cached completions, token budget monitoring, dynamic model fallback routing on rate limits, and ultra-low TTFT Server-Sent Events.
-              </p>
-              <div class="tag-cluster">
-                <span class="tag">FastAPI Async</span>
-                <span class="tag">Redis Semantic Cache</span>
-                <span class="tag">Circuit Breaker</span>
-                <span class="tag">SSE Streaming</span>
-                <span class="tag">Docker</span>
-              </div>
-              <a href="https://github.com/d4rk-agent-z3r0/streamchat-ai" target="_blank" class="btn btn-outline" style="padding: 9px 18px; font-size: 0.82rem;">View Gateway Specs ↗</a>
+              <div class="detail-heading">Architectural Solution</div>
+              <div class="detail-text">Decoupled data flow with Pinecone vector indices for similarity queries, gRPC for binary serialization, and asynchronous Pub/Sub task handling.</div>
             </div>
+          </div>
+        </div>
 
-            <div class="sys-metrics-box">
-              <div class="metric-row">
-                <span class="m-key">Token Cost Reduction</span>
-                <span class="m-val">32% via Vector Cache</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Cached Response Time</span>
-                <span class="m-val">&lt; 14ms Latency</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Resilience</span>
-                <span class="m-val">Zero-Downtime Fallback</span>
-              </div>
-              <div class="metric-row">
-                <span class="m-key">Observability</span>
-                <span class="m-val">Prometheus + Grafana Hooks</span>
-              </div>
+        <!-- System 3: Autonomous Agent Workflows -->
+        <div class="system-card">
+          <div>
+            <span class="system-tag">Stateful Agent Orchestration</span>
+            <h3 class="system-title">
+              <a href="https://github.com/d4rk-agent-z3r0/agentforge" target="_blank">AgentForge & CodeSentinel</a>
+            </h3>
+            <p class="system-summary">
+              Autonomous issue-to-pull-request engine built with cyclic LangGraph state machines. Features tool sandboxing for Git operations, static code analysis (Ruff/Flake8), automated test execution, and human-in-the-loop checkpoints before any state mutation.
+            </p>
+            <div class="tech-pills">
+              <span class="tech-pill">LangGraph</span>
+              <span class="tech-pill">State Persistence</span>
+              <span class="tech-pill">Sandboxed Execution</span>
+              <span class="tech-pill">Human-in-the-Loop</span>
+              <span class="tech-pill">Git Automation</span>
             </div>
+            <a href="https://github.com/d4rk-agent-z3r0/agentforge" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">View Repository ↗</a>
+          </div>
 
-            <div class="system-postmortem">
-              <div class="postmortem-item">
-                <span class="pm-label">Critical Failure Mode Eliminated</span>
-                <span class="pm-desc">Vendor API 429 rate-limiting and connection dropouts killing user streaming sessions during high-concurrency traffic bursts.</span>
-              </div>
-              <div class="postmortem-item">
-                <span class="pm-label">System Compromise & Trade-Off</span>
-                <span class="pm-desc">Cached prompt embeddings at 0.92 cosine similarity threshold; accepted minor variance risk in exchange for 32% token savings and &lt;14ms response times.</span>
-              </div>
+          <div class="system-stats-panel">
+            <div class="stat-row">
+              <span class="stat-label">Task Resolution</span>
+              <span class="stat-val">78% Benchmark</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">State Recovery</span>
+              <span class="stat-val">Checkpointed Rollback</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Safety Invariant</span>
+              <span class="stat-val">Zero Unvalidated Merges</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Self-Healing</span>
+              <span class="stat-val">3x Cyclic Error Retry</span>
             </div>
           </div>
 
-        </div>
-      </section>
-
-      <!-- Interactive Terminal View -->
-      <section class="terminal-window">
-        <div class="term-bar">
-          <div class="term-btn term-close"></div>
-          <div class="term-btn term-min"></div>
-          <div class="term-btn term-max"></div>
-          <span class="term-label">root@d4rk-agent-z3r0: /system/evals</span>
-        </div>
-        <div class="term-content">
-          <div class="cmd-line">&gt; sys-audit --target "Siddharth Majhi" --mode "failure_domain_analysis"</div>
-          <div class="term-out">
-            [AUDIT: PASS] <span class="term-highlight">Hallucination Mitigation:</span> Dual-stage RRF + Cross-Encoder reranker enforcing minimum cosine/lexical score floor<br>
-            [AUDIT: PASS] <span class="term-highlight">Agent Boundedness:</span> Cyclic LangGraph state machines with hard 3x rollback ceilings & Pydantic schema validation<br>
-            [AUDIT: PASS] <span class="term-highlight">Degradation Protocol:</span> Active circuit breakers dynamically fail over to secondary models under upstream 429 rate limits<br>
-            [AUDIT: PASS] <span class="term-highlight">Distributed State:</span> Event-driven Saga Choreography with Kafka-Aerospike delay queues replacing distributed lock cascades<br>
-            [AUDIT: VERDICT] <span class="term-highlight" style="color: var(--green);">STAFF SYSTEMS THINKER:</span> Demonstrated command of non-happy paths, recovery topologies, and enterprise compliance
-          </div>
-          <div class="cmd-line">&gt; cat /proc/system_identity</div>
-          <div class="term-out">
-            { "engineer": "Siddharth Majhi", "archetype": "Forward Deployed & Staff AI Systems Architect", "tenure": "7+ Years Enterprise", "contact": "yoshimitsu117@protonmail.com" }
-          </div>
-        </div>
-      </section>
-
-      <!-- Verified Experience (Accurate from Resume) -->
-      <section id="experience">
-        <div class="section-title-wrap">
-          <span class="section-mono-tag">// 02. VERIFIED WORK HISTORY</span>
-          <h2 class="section-h2">Career Experience</h2>
-          <p class="section-sub">Proven track record across leading fintech, telecom, and global digital identity enterprises.</p>
-        </div>
-
-        <div class="experience-list">
-          
-          <!-- Role 1: Giesecke+Devrient -->
-          <div class="exp-item">
-            <div class="exp-header">
-              <div>
-                <span class="exp-role">Senior Software Engineer (AI & Platform Engineering)</span> • 
-                <span class="exp-company">Giesecke And Devrient India Pvt Ltd</span>
-              </div>
-              <div class="exp-date">09/2025 – Present | Gurugram, India</div>
+          <div class="system-details">
+            <div>
+              <div class="detail-heading">Technical Challenge</div>
+              <div class="detail-text">Open-ended ReAct loops frequently hallucinated parameters or entered recursive loops when running into failing test suites.</div>
             </div>
-            <ul class="exp-points">
-              <li>Design, develop, and deploy high-performance RESTful APIs and AI-powered microservices using Python and FastAPI for enterprise-level applications.</li>
-              <li>Integrate LLM-based inference pipelines and intelligent automation into backend services, enabling AI-driven decision-making at scale.</li>
-              <li>Implement asynchronous request handling and optimize API performance for low-latency, high-throughput agentic AI systems.</li>
-              <li>Implement authentication and authorization mechanisms including OAuth 2.0, JWT tokens, and API key management.</li>
-              <li>Monitor API performance metrics and implement observability solutions using Prometheus and Grafana for ML model serving.</li>
-              <li>Leverage AI coding assistants (Claude Code, Cursor, GitHub Copilot) and Dockerization to accelerate development and code reviews.</li>
-            </ul>
-          </div>
-
-          <!-- Role 2: YES MADAM -->
-          <div class="exp-item">
-            <div class="exp-header">
-              <div>
-                <span class="exp-role">Software Development Engineer 3 (AI Features Lead)</span> • 
-                <span class="exp-company">YES MADAM (Notion Online Solutions)</span>
-              </div>
-              <div class="exp-date">06/2025 – 09/2025 | Noida, India</div>
+            <div>
+              <div class="detail-heading">Architectural Solution</div>
+              <div class="detail-text">Constructed explicit LangGraph state graphs with strict Pydantic validation contracts, hard retry limits, and human approval gates.</div>
             </div>
-            <ul class="exp-points">
-              <li>Led a cross-functional team of 5 engineers on AI feature development, including intelligent recommendation systems and automated workflows.</li>
-              <li>Architected the migration from monolithic systems to AI-ready microservices using industry-standard design patterns (Saga, Choreography, CQRS).</li>
-              <li>Drove LLM prompt engineering and API integration strategies for AI-powered user-facing features.</li>
-              <li>Conducted code reviews, defined sprint allocations, and established coding standards to ensure system maintainability and velocity.</li>
-            </ul>
           </div>
+        </div>
 
-          <!-- Role 3: Airtel Payments Bank -->
-          <div class="exp-item">
-            <div class="exp-header">
-              <div>
-                <span class="exp-role">Software Development Engineer 2 (Cloud & ML Infrastructure)</span> • 
-                <span class="exp-company">Airtel Payments Bank</span>
-              </div>
-              <div class="exp-date">01/2023 – 06/2025 | Gurugram, India</div>
+        <!-- System 4: StreamChat AI Gateway -->
+        <div class="system-card">
+          <div>
+            <span class="system-tag">High-Throughput Middleware</span>
+            <h3 class="system-title">
+              <a href="https://github.com/d4rk-agent-z3r0/streamchat-ai" target="_blank">StreamChat AI Gateway</a>
+            </h3>
+            <p class="system-summary">
+              Production-grade asynchronous FastAPI middleware for LLM inference management. Includes Redis semantic vector caching for sub-15ms cached completions, token budget monitoring, dynamic model fallback routing on rate limits, and ultra-low TTFT Server-Sent Events.
+            </p>
+            <div class="tech-pills">
+              <span class="tech-pill">FastAPI Async</span>
+              <span class="tech-pill">Redis Semantic Cache</span>
+              <span class="tech-pill">Circuit Breaker</span>
+              <span class="tech-pill">SSE Streaming</span>
+              <span class="tech-pill">Docker</span>
             </div>
-            <ul class="exp-points">
-              <li>Led migration from legacy codebase to modern cloud-native, MLOps-ready architecture with gRPC and reactive programming.</li>
-              <li>Created custom metrics framework and integrated Prometheus and Grafana for AI/ML model monitoring and observability.</li>
-              <li>Developed POCs on gRPC with Swagger documentation using gRPC JSON transcoding with Envoy proxy, and implemented GraphQL APIs.</li>
-              <li>Architected secure AWS S3 integration with VPC using S2S VPN tunnel for secure ML training data transfer.</li>
-              <li>Utilized AWS Lambda for serverless ML inference, Cognito for secrets management, and CloudWatch for monitoring.</li>
-              <li>Designed custom delay queue messaging service using Kafka, Aerospike Kafka connector, and Aerospike DB.</li>
-            </ul>
+            <a href="https://github.com/d4rk-agent-z3r0/streamchat-ai" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">View Repository ↗</a>
           </div>
 
-          <!-- Role 4: LTIMindtree -->
-          <div class="exp-item">
-            <div class="exp-header">
-              <div>
-                <span class="exp-role">Senior Software Engineer (Cloud-Native & AI Integration)</span> • 
-                <span class="exp-company">LTIMindtree</span>
-              </div>
-              <div class="exp-date">11/2021 – 12/2022 | Kolkata, India</div>
+          <div class="system-stats-panel">
+            <div class="stat-row">
+              <span class="stat-label">Token Cost Savings</span>
+              <span class="stat-val">32% via Vector Cache</span>
             </div>
-            <ul class="exp-points">
-              <li>Engineered vector database integration into cloud-native airline systems using Pinecone and Google Cloud Vertex AI, accelerating ML model inference by 35% across 5 production microservices.</li>
-              <li>Built RESTful web services with JSON communication and caching integration for high-traffic systems.</li>
-              <li>Implemented gRPC for efficient inter-microservice communication and Google Cloud Datastore for data persistence.</li>
-              <li>Utilized Google Pub/Sub for event-driven, AI-ready architecture enabling asynchronous task processing.</li>
-            </ul>
-          </div>
-
-          <!-- Role 5: Tata Consultancy Services -->
-          <div class="exp-item">
-            <div class="exp-header">
-              <div>
-                <span class="exp-role">System Engineer</span> • 
-                <span class="exp-company">Tata Consultancy Services Limited</span>
-              </div>
-              <div class="exp-date">05/2019 – 10/2021 | Kolkata, India</div>
+            <div class="stat-row">
+              <span class="stat-label">Cache Response Latency</span>
+              <span class="stat-val">&lt; 14ms Hit</span>
             </div>
-            <ul class="exp-points">
-              <li>Provided production support for insurance domain while managing ongoing development and integration initiatives.</li>
-              <li>Built RESTful web services with JSON-based API communication and implemented ORM for database mapping.</li>
-              <li>Resolved production issues within defined SLA using Microsoft Team Foundation Server and wrote comprehensive unit tests.</li>
-            </ul>
+            <div class="stat-row">
+              <span class="stat-label">Fault Tolerance</span>
+              <span class="stat-val">Zero-Downtime Fallback</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Observability</span>
+              <span class="stat-val">Prometheus & Grafana</span>
+            </div>
           </div>
 
-        </div>
-      </section>
-
-      <!-- Technical Competencies Stack -->
-      <section id="competencies">
-        <div class="section-title-wrap">
-          <span class="section-mono-tag">// 03. TECHNICAL ECOSYSTEM</span>
-          <h2 class="section-h2">Skills & Specializations</h2>
-        </div>
-
-        <div class="skills-cluster">
-          <div class="skill-box">
-            <div class="skill-box-title">&gt; AI / LLM Systems</div>
-            <ul class="skill-items">
-              <li>LLM Integration & Prompt Engineering</li>
-              <li>Agentic AI & LangGraph State Machines</li>
-              <li>Vector Databases: Pinecone, ChromaDB</li>
-              <li>Google Cloud Vertex AI & ML Inference</li>
-              <li>MLOps & Ragas Automated Evaluations</li>
-              <li>Semantic Caching & Guardrails</li>
-            </ul>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-box-title">&gt; Cloud & Infrastructure</div>
-            <ul class="skill-items">
-              <li>AWS: Lambda, S3, VPC, DynamoDB, Cognito</li>
-              <li>GCP: Pub/Sub, Datastore, Firestore, GKE</li>
-              <li>Docker, Dockerization & Kubernetes</li>
-              <li>Prometheus, Grafana & Distributed Tracing</li>
-              <li>Kafka & Aerospike Kafka Connector</li>
-              <li>CI/CD: Jenkins, SonarQube, Snyk</li>
-            </ul>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-box-title">&gt; Backend & Architecture</div>
-            <ul class="skill-items">
-              <li>Python (FastAPI, Flask, Django), Go, SQL</li>
-              <li>gRPC with Envoy Proxy & GraphQL APIs</li>
-              <li>Databases: Redis, Aerospike, MongoDB, PostgreSQL</li>
-              <li>Patterns: Saga, Choreography, CQRS, Circuit Breaker</li>
-              <li>Security: OAuth 2.0, JWT, OIDC, API Keys</li>
-              <li>AI Coding: Claude Code, Cursor, Copilot</li>
-            </ul>
+          <div class="system-details">
+            <div>
+              <div class="detail-heading">Technical Challenge</div>
+              <div class="detail-text">Third-party LLM provider API rate-limiting (429s) and connection latency spikes caused unacceptable customer session failures.</div>
+            </div>
+            <div>
+              <div class="detail-heading">Architectural Solution</div>
+              <div class="detail-text">Deployed semantic similarity caching in Redis alongside circuit breakers that dynamically redirect to secondary models during provider incidents.</div>
+            </div>
           </div>
         </div>
-      </section>
 
-      <!-- Education & Awards -->
-      <section style="margin-bottom: 80px;">
-        <div class="section-title-wrap">
-          <span class="section-mono-tag">// 04. CREDENTIALS & AWARDS</span>
-          <h2 class="section-h2">Education & Industry Recognition</h2>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-          <div class="skill-box">
-            <div class="skill-box-title">&gt; Academic Foundation</div>
-            <p style="font-weight: 700; color: var(--text); font-size: 1.05rem;">Bachelor of Technology in Information Technology</p>
-            <p style="color: var(--cyan); font-size: 0.92rem; margin: 4px 0 10px;">National Institute of Science and Technology, Berhampur</p>
-            <p style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem;">2015 – 2019 | CGPA: 8.31 / 10.0</p>
-          </div>
-
-          <div class="skill-box">
-            <div class="skill-box-title">&gt; Key Recognitions</div>
-            <ul class="skill-items">
-              <li>Received client appreciation for architecting and integrating AWS cloud solutions from scratch.</li>
-              <li>Recognized for implementing state machine use cases similar to those used in Uber, Ola, and Zomato.</li>
-              <li>Awarded Onspot and ATeam recognition for outstanding problem-solving and support.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <p>© 2026 Siddharth Majhi</p>
       </div>
-    </footer>
+    </section>
 
-  </div>
+    <!-- Professional Experience -->
+    <section id="experience">
+      <div class="section-header">
+        <span class="section-eyebrow">Work History</span>
+        <h2 class="section-heading">Professional Career Experience</h2>
+        <p class="section-desc">7+ years of engineering impact across global fintech, telecom, and digital identity enterprises.</p>
+      </div>
 
-  <!-- Matrix Background Canvas Animation Script -->
-  <script>
-    const canvas = document.getElementById('matrixCanvas');
-    const ctx = canvas.getContext('2d');
-
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      columns = Math.floor(width / fontSize);
-      drops = [];
-      for (let i = 0; i < columns; i++) {
-        drops[i] = Math.floor(Math.random() * -height);
-      }
-    });
-
-    const characters = '01_LAMBDA_TENSOR_RAG_GRPC_VECTOR_LLM_ROOT_NULL_AUTH_404_OAUTH2_KAFKA_';
-    const fontSize = 14;
-    let columns = Math.floor(width / fontSize);
-    let drops = [];
-
-    for (let i = 0; i < columns; i++) {
-      drops[i] = Math.floor(Math.random() * -100);
-    }
-
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(4, 7, 14, 0.08)';
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.font = fontSize + 'px "JetBrains Mono", monospace';
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+      <div class="experience-container">
         
-        // Alternating cyber colors: emerald green and cyan highlights
-        if (Math.random() > 0.85) {
-          ctx.fillStyle = '#00f0ff';
-        } else if (Math.random() > 0.96) {
-          ctx.fillStyle = '#ffffff';
-        } else {
-          ctx.fillStyle = '#00ff9d';
-        }
+        <!-- Role 1: Giesecke+Devrient -->
+        <div class="experience-card">
+          <div class="exp-top">
+            <div>
+              <span class="exp-role-title">Senior Software Engineer (AI & Platform Engineering)</span> • 
+              <span class="exp-org">Giesecke And Devrient India Pvt Ltd</span>
+            </div>
+            <div class="exp-tenure">09/2025 – Present | Gurugram, India</div>
+          </div>
+          <ul class="exp-duties">
+            <li>Design, develop, and deploy high-performance RESTful APIs and AI-powered microservices using Python and FastAPI for enterprise-level applications.</li>
+            <li>Integrate LLM-based inference pipelines and intelligent automation into backend services, enabling AI-driven decision-making at scale.</li>
+            <li>Implement asynchronous request handling and optimize API performance for low-latency, high-throughput agentic AI systems.</li>
+            <li>Develop comprehensive API documentation using Swagger/OpenAPI 3.0 specifications integrated with FastAPI.</li>
+            <li>Implement authentication and authorization mechanisms including OAuth 2.0, JWT tokens, and API key management.</li>
+            <li>Monitor API performance metrics and implement observability solutions using Prometheus and Grafana for ML model serving.</li>
+            <li>Write comprehensive unit tests using pytest and maintain high code quality with SonarQube and Snyk.</li>
+          </ul>
+        </div>
 
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        <!-- Role 2: YES MADAM -->
+        <div class="experience-card">
+          <div class="exp-top">
+            <div>
+              <span class="exp-role-title">Software Development Engineer 3 (AI Features Lead)</span> • 
+              <span class="exp-org">YES MADAM (Notion Online Solutions)</span>
+            </div>
+            <div class="exp-tenure">06/2025 – 09/2025 | Noida, India</div>
+          </div>
+          <ul class="exp-duties">
+            <li>Led a cross-functional team of 5 engineers on AI feature development, including intelligent recommendation systems and automated workflows.</li>
+            <li>Architected the migration from monolithic systems to AI-ready microservices using industry-standard design patterns (Saga, Choreography, CQRS).</li>
+            <li>Drove LLM prompt engineering and API integration strategies for AI-powered user-facing features.</li>
+            <li>Conducted rigorous code reviews and provided actionable feedback to maintain high code quality and architectural integrity.</li>
+            <li>Planned sprint activities and assigned tasks to team members, ensuring optimal delivery velocity.</li>
+          </ul>
+        </div>
 
-        if (drops[i] * fontSize > height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
+        <!-- Role 3: Airtel Payments Bank -->
+        <div class="experience-card">
+          <div class="exp-top">
+            <div>
+              <span class="exp-role-title">Software Development Engineer 2 (Cloud & ML Infrastructure)</span> • 
+              <span class="exp-org">Airtel Payments Bank</span>
+            </div>
+            <div class="exp-tenure">01/2023 – 06/2025 | Gurugram, India</div>
+          </div>
+          <ul class="exp-duties">
+            <li>Led migration from legacy codebase to modern cloud-native, MLOps-ready architecture with gRPC and reactive programming.</li>
+            <li>Created custom metrics framework and integrated Prometheus and Grafana for AI/ML model monitoring and observability.</li>
+            <li>Developed POCs on gRPC with Swagger documentation using gRPC JSON transcoding with Envoy proxy, and implemented GraphQL APIs.</li>
+            <li>Architected secure AWS S3 integration with VPC using S2S VPN tunnel for secure ML training data transfer.</li>
+            <li>Utilized AWS Lambda for serverless ML inference, Cognito for secrets management, and CloudWatch for monitoring.</li>
+            <li>Designed custom delay queue messaging service using Kafka, Aerospike Kafka connector, and Aerospike DB.</li>
+          </ul>
+        </div>
 
-        drops[i]++;
-      }
-    }
+        <!-- Role 4: LTIMindtree -->
+        <div class="experience-card">
+          <div class="exp-top">
+            <div>
+              <span class="exp-role-title">Senior Software Engineer (Cloud-Native & AI Integration)</span> • 
+              <span class="exp-org">LTIMindtree</span>
+            </div>
+            <div class="exp-tenure">11/2021 – 12/2022 | Kolkata, India</div>
+          </div>
+          <ul class="exp-duties">
+            <li>Engineered vector database integration into cloud-native airline systems using Pinecone and Google Cloud Vertex AI, accelerating ML model inference by 35% across 5 production microservices.</li>
+            <li>Built RESTful web services with JSON communication and caching integration for high-traffic systems.</li>
+            <li>Implemented gRPC for efficient inter-microservice communication and Google Cloud Datastore for data persistence.</li>
+            <li>Utilized Google Pub/Sub for event-driven, AI-ready architecture enabling asynchronous task processing.</li>
+          </ul>
+        </div>
 
-    setInterval(drawMatrix, 40);
-  </script>
+        <!-- Role 5: Tata Consultancy Services -->
+        <div class="experience-card">
+          <div class="exp-top">
+            <div>
+              <span class="exp-role-title">System Engineer</span> • 
+              <span class="exp-org">Tata Consultancy Services Limited</span>
+            </div>
+            <div class="exp-tenure">05/2019 – 10/2021 | Kolkata, India</div>
+          </div>
+          <ul class="exp-duties">
+            <li>Provided production support for insurance domain while managing ongoing development and integration initiatives.</li>
+            <li>Built RESTful web services with JSON-based API communication and implemented ORM for database mapping.</li>
+            <li>Resolved production issues within defined SLA using Microsoft Team Foundation Server and authored comprehensive unit tests.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Competencies -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-eyebrow">Skills & Capabilities</span>
+        <h2 class="section-heading">Technical Competencies</h2>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skills-group">
+          <h3 class="skills-group-title">AI & Machine Learning</h3>
+          <ul class="skills-item-list">
+            <li>LLM Integration & Prompt Engineering</li>
+            <li>Agentic AI & LangGraph State Machines</li>
+            <li>Vector DBs: Pinecone, ChromaDB</li>
+            <li>Google Cloud Vertex AI & ML Inference</li>
+            <li>MLOps & Ragas Automated Evaluations</li>
+            <li>Semantic Vector Caching & Guardrails</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Cloud & Infrastructure</h3>
+          <ul class="skills-item-list">
+            <li>AWS: Lambda, S3, VPC, DynamoDB, Cognito</li>
+            <li>GCP: Pub/Sub, Datastore, Firestore, GKE</li>
+            <li>Docker, Dockerization & Kubernetes</li>
+            <li>Prometheus, Grafana Observability</li>
+            <li>Kafka & Aerospike Kafka Connector</li>
+            <li>CI/CD: Jenkins, SonarQube, Snyk</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Backend & Architecture</h3>
+          <ul class="skills-item-list">
+            <li>Python (FastAPI, Flask, Django), Go, SQL</li>
+            <li>gRPC with Envoy Proxy & GraphQL APIs</li>
+            <li>Databases: Redis, Aerospike, MongoDB, PostgreSQL</li>
+            <li>Patterns: Saga, Choreography, CQRS, Circuit Breaker</li>
+            <li>Security: OAuth 2.0, JWT, OIDC, API Keys</li>
+            <li>AI Coding Tools: Claude Code, Cursor, Copilot</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Recognitions -->
+    <section>
+      <div class="section-header">
+        <span class="section-eyebrow">Credentials</span>
+        <h2 class="section-heading">Education & Industry Recognition</h2>
+      </div>
+
+      <div class="dual-grid">
+        <div class="info-card">
+          <h3 class="info-card-title">Academic Background</h3>
+          <p class="degree-name">Bachelor of Technology in Information Technology</p>
+          <p class="institution-name">National Institute of Science and Technology, Berhampur</p>
+          <p class="degree-meta">2015 – 2019 | CGPA: 8.31 / 10.0</p>
+        </div>
+
+        <div class="info-card">
+          <h3 class="info-card-title">Key Industry Recognitions</h3>
+          <ul class="honors-list">
+            <li>Client appreciation for architecting and integrating AWS cloud solutions from scratch.</li>
+            <li>Recognized for implementing state machine use cases similar to those used in high-concurrency dispatch systems (Uber, Zomato).</li>
+            <li>Awarded Onspot and ATeam recognition for outstanding engineering problem-solving and support.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean Professional Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <span>© 2026 Siddharth Majhi. All rights reserved.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/d4rk-agent-z3r0" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank">LinkedIn</a>
+        <a href="mailto:yoshimitsu117@protonmail.com">Contact</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
