@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddharth Majhi | Forward Deployed & LLM Systems Engineer</title>
+  <meta name="description" content="Portfolio of Siddharth Majhi (d4rk-agent-z3r0) — Senior Software Engineer specializing in Forward Deployed AI, Production LLM Systems, Agentic Workflows, and Cloud-Native Microservices." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #090d16;
+      --bg-card: #0f172a;
+      --bg-card-hover: #162038;
+      --border: #1e293b;
+      --border-accent: rgba(56, 189, 248, 0.25);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-sub: #64748b;
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.15);
+      --violet: #818cf8;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(129, 140, 248, 0.06) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(9, 13, 22, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo-badge {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--cyan);
+      border: 1px solid var(--border-accent);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: var(--emerald);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--emerald);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.2); }
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.35rem;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 18px;
+      font-family: var(--font-mono);
+    }
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 620px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      color: #050b14;
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
+    }
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--cyan);
+    }
+
+    /* Avatar card */
+    .avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .avatar-glow {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      filter: blur(40px);
+      opacity: 0.25;
+      z-index: 1;
+    }
+    .avatar-img {
+      position: relative;
+      z-index: 2;
+      width: 260px;
+      height: 260px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 2px solid var(--border-accent);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Metrics Strip */
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 40px 0 70px;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 12px;
+      text-align: left;
+      transition: border-color 0.2s;
+    }
+    .metric-card:hover {
+      border-color: var(--cyan);
+    }
+    .metric-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cyan);
+      font-family: var(--font-mono);
+      margin-bottom: 4px;
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 40px;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      color: var(--cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    /* Flagship Projects */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin-bottom: 80px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      transform: translateY(-3px);
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--cyan), var(--violet));
+    }
+    .project-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--cyan);
+      border: 1px solid var(--border-accent);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .project-title {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .tech-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .project-stats-box {
+      background: #090e1a;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+    .stat-title {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .stat-highlight {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--emerald);
+      font-size: 0.95rem;
+    }
+
+    /* Core Competencies */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .skill-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .skill-list {
+      list-style: none;
+    }
+    .skill-list li {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-list li::before {
+      content: '▹';
+      color: var(--cyan);
+    }
+
+    /* Terminal Widget */
+    .terminal-section {
+      background: #060911;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 80px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .terminal-header {
+      background: #0f172a;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+    .terminal-title {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-left: 8px;
+    }
+    .terminal-body {
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      color: #38bdf8;
+      line-height: 1.7;
+    }
+    .t-prompt { color: #a855f7; }
+    .t-cmd { color: #f1f5f9; font-weight: 600; }
+    .t-out { color: #94a3b8; margin: 6px 0 16px; }
+
+    /* Experience */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+    .timeline-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .timeline-role {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .timeline-company {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+    .timeline-bullets {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .timeline-bullets li {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      padding: 4px 0;
+      display: flex;
+      gap: 8px;
+    }
+    .timeline-bullets li::before {
+      content: '—';
+      color: var(--violet);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 50px 0;
+      text-align: center;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-bio { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+      .project-card { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <span>d4rk-agent-z3r0</span>
+        <span class="logo-badge">FDE / LLM Systems</span>
+      </a>
+      <div class="nav-links">
+        <a href="#systems">Flagship Systems</a>
+        <a href="#expertise">Core Architecture</a>
+        <a href="#experience">Background</a>
+        <a href="https://github.com/d4rk-agent-z3r0" target="_blank" class="nav-cta">GitHub Profile ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            Available for Forward Deployed & Senior LLM Engineering Roles
+          </div>
+          <h1>
+            Hi, I'm <span class="gradient-text">Siddharth Majhi</span>
+          </h1>
+          <div class="hero-subtitle">
+            Forward Deployed Engineer • LLM Systems Architect
+          </div>
+          <p class="hero-bio">
+            Senior Software Engineer G2 with 5+ years of enterprise experience building hardened cloud-native distributed microservices, autonomous agent pipelines, and production RAG architectures. Specialized in bridging the "Delta" between messy real-world customer infrastructure and high-reliability AI solutions.
+          </p>
+          <div class="hero-actions">
+            <a href="#systems" class="btn btn-primary">⚡ Explore Flagship Systems</a>
+            <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank" class="btn btn-secondary">Connect on LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <div class="avatar-wrapper">
+          <div class="avatar-glow"></div>
+          <img src="images/avatar.jpg" alt="Siddharth Majhi - Avatar" class="avatar-img" onerror="this.src='https://avatars.githubusercontent.com/u/334216725?v=4'" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Strip -->
+    <section class="metrics-strip">
+      <div class="metric-card">
+        <div class="metric-val">94.2%</div>
+        <div class="metric-label">RAGAS Faithfulness</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">&lt; 15ms</div>
+        <div class="metric-label">Redis Vector Cache Hit</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">78%</div>
+        <div class="metric-label">Agent Autonomous PR Resolution</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">5+ Yrs</div>
+        <div class="metric-label">Enterprise Backend / Distributed</div>
+      </div>
+    </section>
+
+    <!-- Flagship Systems Section -->
+    <section id="systems" style="padding-top: 40px;">
+      <div class="section-header">
+        <span class="section-tag">// 01. PRODUCTION SYSTEMS</span>
+        <h2 class="section-title">Flagship Implementations</h2>
+        <p style="color: var(--text-muted); margin-top: 8px;">Designed and benchmarked for real-world enterprise deployment with automated evaluation harnesses.</p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: IntelliDoc RAG -->
+        <div class="project-card">
+          <div>
+            <span class="project-badge">RAG ARCHITECTURE & EVALS</span>
+            <h3 class="project-title">
+              IntelliDoc Enterprise
+              <a href="https://github.com/d4rk-agent-z3r0/intellidoc-rag" target="_blank" style="color: var(--cyan); text-decoration: none; font-size: 1rem;">[Repo ↗]</a>
+            </h3>
+            <p class="project-desc">
+              High-precision document Q&A engine built for complex enterprise documents (PDF/TXT) featuring layout-aware recursive chunking, hybrid retrieval (BM25 + ChromaDB) fused with Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and full RAGAS evaluation suites.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python 3.12</span>
+              <span class="tech-tag">ChromaDB</span>
+              <span class="tech-tag">BM25 + RRF</span>
+              <span class="tech-tag">Cross-Encoder</span>
+              <span class="tech-tag">Ragas Evals</span>
+              <span class="tech-tag">SSE Streaming</span>
+            </div>
+            <a href="https://github.com/d4rk-agent-z3r0/intellidoc-rag" target="_blank" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">View Architecture & Code ↗</a>
+          </div>
+
+          <div class="project-stats-box">
+            <div class="stat-row">
+              <span class="stat-title">Faithfulness (Ragas)</span>
+              <span class="stat-highlight">94.2% (+26.7% vs Naive)</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">Hallucination Reduction</span>
+              <span class="stat-highlight">-38% vs pure vector</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">p95 Retrieval Latency</span>
+              <span class="stat-highlight">&lt; 380ms</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">Security Layer</span>
+              <span class="stat-highlight">Role-Based Access (RBAC)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: AgentForge & CodeSentinel -->
+        <div class="project-card">
+          <div>
+            <span class="project-badge">AGENTIC ORCHESTRATION & STATE MACHINES</span>
+            <h3 class="project-title">
+              AgentForge & CodeSentinel
+              <a href="https://github.com/d4rk-agent-z3r0/agentforge" target="_blank" style="color: var(--cyan); text-decoration: none; font-size: 1rem;">[Repo ↗]</a>
+            </h3>
+            <p class="project-desc">
+              Autonomous issue-to-pull-request engine built with cyclic LangGraph state machines. Features tool sandboxing for git operations, static code analysis (Ruff/Flake8), automated test execution, and human-in-the-loop checkpoints before any destructive action is taken.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">LangGraph</span>
+              <span class="tech-tag">Tool Calling</span>
+              <span class="tech-tag">Sandboxed Execution</span>
+              <span class="tech-tag">Human-in-the-Loop</span>
+              <span class="tech-tag">Git Automation</span>
+            </div>
+            <a href="https://github.com/d4rk-agent-z3r0/agentforge" target="_blank" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">View Agent State Machine ↗</a>
+          </div>
+
+          <div class="project-stats-box">
+            <div class="stat-row">
+              <span class="stat-title">Autonomous Resolution</span>
+              <span class="stat-highlight">78% Synthetic Benchmark</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">State Persistence</span>
+              <span class="stat-highlight">Checkpoint Rollback</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">Guardrails</span>
+              <span class="stat-highlight">0 unvalidated merges</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">Self-Healing</span>
+              <span class="stat-highlight">3x error retry cycle</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: StreamChat AI Gateway -->
+        <div class="project-card">
+          <div>
+            <span class="project-badge">HIGH-THROUGHPUT INFERENCE GATEWAY</span>
+            <h3 class="project-title">
+              StreamChat AI Gateway
+              <a href="https://github.com/d4rk-agent-z3r0/streamchat-ai" target="_blank" style="color: var(--cyan); text-decoration: none; font-size: 1rem;">[Repo ↗]</a>
+            </h3>
+            <p class="project-desc">
+              Production-grade async FastAPI middleware for LLM inference management. Includes Redis semantic vector caching for sub-15ms cached completions, token budget monitoring, dynamic model fallback routing on rate limits, and ultra-low TTFT Server-Sent Events.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">FastAPI Async</span>
+              <span class="tech-tag">Redis Semantic Cache</span>
+              <span class="tech-tag">SSE Streaming</span>
+              <span class="tech-tag">Circuit Breakers</span>
+              <span class="tech-tag">Docker</span>
+            </div>
+            <a href="https://github.com/d4rk-agent-z3r0/streamchat-ai" target="_blank" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">View Gateway Specs ↗</a>
+          </div>
+
+          <div class="project-stats-box">
+            <div class="stat-row">
+              <span class="stat-title">Token Cost Savings</span>
+              <span class="stat-highlight">32% via Vector Cache</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">Cached Response Latency</span>
+              <span class="stat-highlight">&lt; 14ms</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">Resilience</span>
+              <span class="stat-highlight">Primary → Secondary Fallback</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-title">Observability</span>
+              <span class="stat-highlight">Tracing / Token Usage Hooks</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Terminal Section -->
+    <div class="terminal-section">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+        </div>
+        <div class="terminal-title">d4rk-agent-z3r0@fde-node: ~</div>
+      </div>
+      <div class="terminal-body">
+        <div><span class="t-prompt">➜</span> <span class="t-cmd">fde-cli inspect --candidate "Siddharth Majhi"</span></div>
+        <div class="t-out">
+          [OK] Role Match: Forward Deployed AI Engineer / Production LLM Engineer<br>
+          [OK] Cloud-Native Systems: FastAPI, Spring Boot, Go, Docker, Redis, Kubernetes<br>
+          [OK] AI Core: RAG (Hybrid/RRF), LangGraph, ChromaDB, Ragas Evals, Latency Optimization<br>
+          [OK] Forward Deployed Mindset: Customer-centric problem solving, enterprise RBAC, ambiguity resolution<br>
+          [READY] Status: Active Candidate for High-Impact AI Teams
+        </div>
+        <div><span class="t-prompt">➜</span> <span class="t-cmd">cat contact_card.json</span></div>
+        <div class="t-out">
+          { "email": "majhysiddharth17121996@gmail.com", "location": "Gurgaon, India", "github": "github.com/d4rk-agent-z3r0" }
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Competencies -->
+    <section id="expertise">
+      <div class="section-header">
+        <span class="section-tag">// 02. ARCHITECTURAL PILLARS</span>
+        <h2 class="section-title">Core Competencies</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>🤖 LLM & RAG Systems</h3>
+          <ul class="skill-list">
+            <li>Hybrid Retrieval (Dense + BM25 Lexical)</li>
+            <li>Reciprocal Rank Fusion (RRF) & Cross-Encoders</li>
+            <li>Automated Evals (Ragas, DeepEval, Faithfulness)</li>
+            <li>Chunking strategies & Context Window Management</li>
+            <li>Prompt Caching & LLM Guardrails</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>🔗 Agentic State Machines</h3>
+          <ul class="skill-list">
+            <li>LangGraph cyclic graphs & state persistence</li>
+            <li>Tool calling with sandboxed error recovery</li>
+            <li>Human-in-the-Loop approval breakpoints</li>
+            <li>Multi-agent communication patterns</li>
+            <li>Task decomposition & autonomous planning</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h3>⚡ Hardened Backend & FDE</h3>
+          <ul class="skill-list">
+            <li>FastAPI, Async Python, Java Spring Boot, Go</li>
+            <li>Redis Semantic Caching & Rate Limiting</li>
+            <li>Docker containerization & CI/CD automation</li>
+            <li>Enterprise RBAC & secure API gateways</li>
+            <li>Distributed tracing with OpenTelemetry / Langfuse</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+      <div class="section-header">
+        <span class="section-tag">// 03. TRACK RECORD</span>
+        <h2 class="section-title">Professional Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Senior Software Engineer G2</span> • 
+              <span class="timeline-company">Giesecke+Devrient India Pvt Limited</span>
+            </div>
+            <div class="timeline-date">2022 — Present | Gurgaon, India</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Architected and deployed enterprise-grade microservices handling mission-critical digital identity and payment security workflows.</li>
+            <li>Spearheaded research and implementation of internal generative AI tooling, automated RAG pipelines, and API integrations.</li>
+            <li>Engineered scalable backend services leveraging cloud-native containers, Redis caching, and resilient database architectures.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Software Engineer</span> • 
+              <span class="timeline-company">Yes Madam (Notion Online Solutions Pvt Limited)</span>
+            </div>
+            <div class="timeline-date">2020 — 2022 | Noida, India</div>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Engineered high-throughput backend services and transaction APIs powering customer-facing booking and operational logistics.</li>
+            <li>Implemented Redis-based caching and database optimization to reduce peak transaction latency under heavy consumer traffic.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://github.com/d4rk-agent-z3r0" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank">LinkedIn</a>
+        <a href="mailto:majhysiddharth17121996@gmail.com">Contact Email</a>
+      </div>
+      <p>© 2026 Siddharth Majhi (d4rk-agent-z3r0). Designed for Forward Deployed & LLM Engineering.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
