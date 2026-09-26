@@ -511,113 +511,7 @@
       font-weight: 700;
     }
 
-    /* Architectural Decision Records (ADRs) */
-    .tradeoffs-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-bottom: 90px;
-    }
-    .tradeoff-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      backdrop-filter: blur(8px);
-      transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .tradeoff-card:hover {
-      border-color: var(--border-cyan);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.08);
-      transform: translateY(-2px);
-    }
-    .tradeoff-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .tradeoff-domain {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--cyan);
-      background: rgba(0, 240, 255, 0.08);
-      border: 1px solid var(--border-cyan);
-      padding: 3px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.04em;
-    }
-    .tradeoff-id {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--text-dim);
-    }
-    .tradeoff-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-    .tradeoff-body {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .clause-box {
-      border-radius: 6px;
-      padding: 12px 14px;
-      font-size: 0.88rem;
-      line-height: 1.6;
-    }
-    .clause-context {
-      background: rgba(56, 189, 248, 0.05);
-      border-left: 3px solid var(--cyan);
-      color: #cbd5e1;
-    }
-    .clause-context strong {
-      color: var(--cyan);
-      font-family: var(--font-mono);
-      display: inline-block;
-      margin-right: 6px;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-    }
-    .clause-risk {
-      background: rgba(239, 68, 68, 0.05);
-      border-left: 3px solid var(--red);
-      color: #cbd5e1;
-    }
-    .clause-risk strong {
-      color: var(--red);
-      font-family: var(--font-mono);
-      display: inline-block;
-      margin-right: 6px;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-    }
-    .clause-res {
-      background: rgba(0, 255, 157, 0.06);
-      border-left: 3px solid var(--green);
-      color: #e2e8f0;
-      margin-top: 4px;
-    }
-    .clause-res strong {
-      color: var(--green);
-      font-family: var(--font-mono);
-      display: inline-block;
-      margin-right: 6px;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-    }
-
     @media (max-width: 900px) {
-      .tradeoffs-grid { grid-template-columns: 1fr; }
       .system-postmortem { grid-template-columns: 1fr; }
     }
 
@@ -825,7 +719,6 @@
         </a>
         <div class="nav-links">
           <a href="#systems">// Systems</a>
-          <a href="#tradeoffs">// Architecture Decisions (ADRs)</a>
           <a href="#experience">// Experience</a>
           <a href="#competencies">// Stack</a>
           <a href="https://github.com/d4rk-agent-z3r0" target="_blank" class="nav-btn">GitHub Profile ↗</a>
@@ -852,8 +745,8 @@
               <span>// ARCHITECTURAL CREED:</span> "Code is ephemeral; failure modes are eternal. If you don't bound non-deterministic models with deterministic contracts, your system owns you."
             </div>
             <div class="hero-actions">
-              <a href="#tradeoffs" class="btn btn-cyber">⚖️ Architecture Decisions (ADRs)</a>
-              <a href="#systems" class="btn btn-outline">⚡ Flagship Systems</a>
+              <a href="#systems" class="btn btn-cyber">⚡ Explore Production Systems</a>
+              <a href="#experience" class="btn btn-outline">Career Track Record</a>
               <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
             </div>
           </div>
@@ -1104,107 +997,6 @@
               <div class="postmortem-item">
                 <span class="pm-label">System Compromise & Trade-Off</span>
                 <span class="pm-desc">Cached prompt embeddings at 0.92 cosine similarity threshold; accepted minor variance risk in exchange for 32% token savings and &lt;14ms response times.</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Architectural Decision Records (ADRs) -->
-      <section id="tradeoffs" style="margin-bottom: 90px;">
-        <div class="section-title-wrap">
-          <span class="section-mono-tag">// 02. SYSTEM DESIGN & ARCHITECTURAL DECISIONS</span>
-          <h2 class="section-h2">Architectural Decision Records (ADRs)</h2>
-          <p class="section-sub">Production systems engineering requires managing trade-offs, edge cases, and failure boundaries under enterprise constraints.</p>
-        </div>
-
-        <div class="tradeoffs-grid">
-          
-          <!-- ADR 1: RAG Strategy -->
-          <div class="tradeoff-card">
-            <div>
-              <div class="tradeoff-header">
-                <span class="tradeoff-domain">RETRIEVAL TOPOLOGY</span>
-                <span class="tradeoff-id">ADR-01 // RAG</span>
-              </div>
-              <h3 class="tradeoff-title">Dense Embeddings vs. Lexical-Semantic Hybrid Search</h3>
-              <div class="tradeoff-body">
-                <div class="clause-box clause-context">
-                  <strong>SYSTEM CONTEXT:</strong> Querying heterogeneous enterprise corpora containing unstructured disclosures, tabular reports, and exact alphanumeric identifiers.
-                </div>
-                <div class="clause-box clause-risk">
-                  <strong>INVARIANT FAILURE RISK:</strong> Dense vector embeddings alone dilute exact token matches, leading to high-confidence factual hallucinations on critical compliance and domain-specific queries.
-                </div>
-                <div class="clause-box clause-res">
-                  <strong>ARCHITECTURAL DECISION:</strong> Multi-stage Hybrid Retrieval fusing BM25 lexical recall with ChromaDB/Pinecone dense embeddings via Reciprocal Rank Fusion (RRF), gated by Cross-Encoder reranking with strict score floors.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ADR 2: Agent Execution -->
-          <div class="tradeoff-card">
-            <div>
-              <div class="tradeoff-header">
-                <span class="tradeoff-domain">AGENT ORCHESTRATION</span>
-                <span class="tradeoff-id">ADR-02 // AGENTS</span>
-              </div>
-              <h3 class="tradeoff-title">Autonomous Execution vs. Deterministic Guardrails</h3>
-              <div class="tradeoff-body">
-                <div class="clause-box clause-context">
-                  <strong>SYSTEM CONTEXT:</strong> Deploying autonomous LLM agents to execute multi-step tool calls, code modifications, and continuous integration triage.
-                </div>
-                <div class="clause-box clause-risk">
-                  <strong>INVARIANT FAILURE RISK:</strong> Open-ended ReAct execution loops risk hallucinating API arguments, causing workspace state corruption, or entering unbounded token-burning retry spirals upon tool exceptions.
-                </div>
-                <div class="clause-box clause-res">
-                  <strong>ARCHITECTURAL DECISION:</strong> Cyclic LangGraph state machines enforcing strict typed Pydantic contracts, deterministic 3x error recovery ceilings with snapshot rollbacks, and mandatory Human-in-the-Loop gates prior to any state mutation.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ADR 3: Serving & Latency -->
-          <div class="tradeoff-card">
-            <div>
-              <div class="tradeoff-header">
-                <span class="tradeoff-domain">INFERENCE THROUGHPUT</span>
-                <span class="tradeoff-id">ADR-03 // INFERENCE</span>
-              </div>
-              <h3 class="tradeoff-title">Sub-500ms TTFT vs. Deep Reasoning Depth</h3>
-              <div class="tradeoff-body">
-                <div class="clause-box clause-context">
-                  <strong>SYSTEM CONTEXT:</strong> High-concurrency streaming inference serving client applications requiring interactive sub-500ms Time-to-First-Token (TTFT).
-                </div>
-                <div class="clause-box clause-risk">
-                  <strong>INVARIANT FAILURE RISK:</strong> Frontier reasoning models incur multi-second TTFT latencies, while upstream model provider APIs enforce aggressive 429 rate-limiting and connection throttling during traffic surges.
-                </div>
-                <div class="clause-box clause-res">
-                  <strong>ARCHITECTURAL DECISION:</strong> High-throughput FastAPI middleware with Redis semantic vector caching (&lt; 15ms hit latency for &gt;0.92 cosine similarity) and automated circuit breakers dynamically falling back to secondary models.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ADR 4: Monolith Migration -->
-          <div class="tradeoff-card">
-            <div>
-              <div class="tradeoff-header">
-                <span class="tradeoff-domain">DISTRIBUTED CONSISTENCY</span>
-                <span class="tradeoff-id">ADR-04 // ARCHITECTURE</span>
-              </div>
-              <h3 class="tradeoff-title">Distributed Transactions vs. Eventual Consistency</h3>
-              <div class="tradeoff-body">
-                <div class="clause-box clause-context">
-                  <strong>SYSTEM CONTEXT:</strong> Modernizing high-scale financial and transactional cores (Airtel Payments Bank / YES MADAM) from legacy monoliths to decoupled microservices.
-                </div>
-                <div class="clause-box clause-risk">
-                  <strong>INVARIANT FAILURE RISK:</strong> Distributed Two-Phase Commit (2PC) transactions introduce severe database lock contention, cross-service coupling, and catastrophic cascading availability failures.
-                </div>
-                <div class="clause-box clause-res">
-                  <strong>ARCHITECTURAL DECISION:</strong> Event-Driven Saga Choreography with compensating rollback transactions, CQRS read-write separation, and Kafka + Aerospike delay queues ensuring guaranteed at-least-once delivery with deduplication.
-                </div>
               </div>
             </div>
           </div>
