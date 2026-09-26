@@ -465,6 +465,156 @@
       color: var(--green);
     }
 
+    /* System Postmortem & Trade-off Badges */
+    .system-postmortem {
+      grid-column: 1 / -1;
+      background: rgba(4, 7, 14, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 18px;
+      border-left: 3px solid var(--cyan);
+    }
+    .pm-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .pm-desc {
+      font-size: 0.86rem;
+      color: #94a3b8;
+      line-height: 1.55;
+    }
+    .hero-philosophy {
+      background: rgba(0, 240, 255, 0.03);
+      border-left: 3px solid var(--cyan);
+      padding: 12px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 24px;
+      border-radius: 0 6px 6px 0;
+      border-top: 1px solid rgba(0, 240, 255, 0.08);
+      border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+      border-right: 1px solid rgba(0, 240, 255, 0.08);
+    }
+    .hero-philosophy span {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    /* Architectural Decision Matrix (The Ifs & The Buts) */
+    .tradeoffs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 90px;
+    }
+    .tradeoff-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .tradeoff-card:hover {
+      border-color: var(--border-cyan);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.08);
+      transform: translateY(-2px);
+    }
+    .tradeoff-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .tradeoff-domain {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--cyan);
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid var(--border-cyan);
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .tradeoff-id {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-dim);
+    }
+    .tradeoff-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .tradeoff-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .clause-box {
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .clause-if {
+      background: rgba(245, 158, 11, 0.05);
+      border-left: 3px solid var(--amber);
+      color: #cbd5e1;
+    }
+    .clause-if strong {
+      color: var(--amber);
+      font-family: var(--font-mono);
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .clause-but {
+      background: rgba(239, 68, 68, 0.05);
+      border-left: 3px solid var(--red);
+      color: #cbd5e1;
+    }
+    .clause-but strong {
+      color: var(--red);
+      font-family: var(--font-mono);
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .clause-res {
+      background: rgba(0, 255, 157, 0.06);
+      border-left: 3px solid var(--green);
+      color: #e2e8f0;
+      margin-top: 4px;
+    }
+    .clause-res strong {
+      color: var(--green);
+      font-family: var(--font-mono);
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .tradeoffs-grid { grid-template-columns: 1fr; }
+      .system-postmortem { grid-template-columns: 1fr; }
+    }
+
     /* Terminal Simulation Box */
     .terminal-window {
       background: #060911;
@@ -669,6 +819,7 @@
         </a>
         <div class="nav-links">
           <a href="#systems">// Systems</a>
+          <a href="#tradeoffs">// Trade-offs (Ifs & Buts)</a>
           <a href="#experience">// Experience</a>
           <a href="#competencies">// Stack</a>
           <a href="https://github.com/d4rk-agent-z3r0" target="_blank" class="nav-btn">GitHub Profile ↗</a>
@@ -686,15 +837,18 @@
               Siddharth <span class="hero-accent">Majhi</span>
             </h1>
             <div class="hero-title-sub">
-              &gt; Senior Software Engineer • AI & Platform Engineering
+              &gt; Staff AI & Platform Engineer • Distributed Systems Architect
             </div>
             <p class="hero-summary">
-              <b>7+ years of engineering experience</b> architecting enterprise-grade AI platforms, LLM orchestration pipelines, and cloud-native microservices. Proven track record leading migrations from monoliths to event-driven architectures, integrating vector databases (<b>Pinecone / ChromaDB</b>), and deploying production LLMs across <b>Giesecke+Devrient</b>, <b>Airtel Payments Bank</b>, and <b>LTIMindtree</b>.
+              <b>7+ years of engineering ownership</b> architecting high-reliability AI platforms, resilient distributed microservices, and agentic state machines. I design for the failure modes and edge cases that bring down production: <b>hallucination cascades, semantic drift, distributed lock contention, and backpressure under load</b>. Track record leading monolith-to-microservice migrations, deploying vector engines (<b>Pinecone / Vertex AI</b>), and building high-throughput low-latency systems across <b>Giesecke+Devrient</b>, <b>Airtel Payments Bank</b>, and <b>LTIMindtree</b>.
             </p>
+            <div class="hero-philosophy">
+              <span>// ARCHITECTURAL CREED:</span> "Code is ephemeral; failure modes are eternal. If you don't bound non-deterministic models with deterministic contracts, your system owns you."
+            </div>
             <div class="hero-actions">
-              <a href="#systems" class="btn btn-cyber">⚡ Explore Production Systems</a>
-              <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank" class="btn btn-outline">LinkedIn Profile ↗</a>
-              <a href="mailto:yoshimitsu117@protonmail.com" class="btn btn-outline">yoshimitsu117@protonmail.com</a>
+              <a href="#tradeoffs" class="btn btn-cyber">⚖️ The Ifs & The Buts (Trade-offs)</a>
+              <a href="#systems" class="btn btn-outline">⚡ Flagship Systems</a>
+              <a href="https://www.linkedin.com/in/siddharth-majhi" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
             </div>
           </div>
 
@@ -781,6 +935,17 @@
                 <span class="m-val">Multi-tenant RBAC</span>
               </div>
             </div>
+
+            <div class="system-postmortem">
+              <div class="postmortem-item">
+                <span class="pm-label">Critical Failure Mode Eliminated</span>
+                <span class="pm-desc">Cosine similarity dilution on tabular disclosures and alphanumeric product codes; prevented factual hallucination via deterministic BM25 lexical fusion.</span>
+              </div>
+              <div class="postmortem-item">
+                <span class="pm-label">System Compromise & Trade-Off</span>
+                <span class="pm-desc">Incurred +65ms p95 latency overhead for cross-encoder reranking in exchange for +26.7% gain in answer faithfulness and context precision.</span>
+              </div>
+            </div>
           </div>
 
           <!-- System 2: Pinecone Vector System at Scale -->
@@ -820,6 +985,17 @@
               <div class="metric-row">
                 <span class="m-key">Architecture</span>
                 <span class="m-val">Event-Driven Asynchronous</span>
+              </div>
+            </div>
+
+            <div class="system-postmortem">
+              <div class="postmortem-item">
+                <span class="pm-label">Critical Failure Mode Eliminated</span>
+                <span class="pm-desc">Cold-start inference latency bottlenecks and inter-service HTTP serialization overhead across 5 critical flight-ops microservices.</span>
+              </div>
+              <div class="postmortem-item">
+                <span class="pm-label">System Compromise & Trade-Off</span>
+                <span class="pm-desc">Shifted from simple REST to strict Protobuf/gRPC contracts; increased schema versioning overhead but cut network serialization payloads by 60%.</span>
               </div>
             </div>
           </div>
@@ -862,6 +1038,17 @@
                 <span class="m-val">3x Cyclic Error Retry</span>
               </div>
             </div>
+
+            <div class="system-postmortem">
+              <div class="postmortem-item">
+                <span class="pm-label">Critical Failure Mode Eliminated</span>
+                <span class="pm-desc">Unbounded ReAct execution loops burning tokens on failing unit tests; isolated failures via sandboxed execution and enforced a 3x retry rollback ceiling.</span>
+              </div>
+              <div class="postmortem-item">
+                <span class="pm-label">System Compromise & Trade-Off</span>
+                <span class="pm-desc">Sacrificed full autonomous deployment velocity in favor of deterministic human-in-the-loop checkpoints before any git push or PR merge.</span>
+              </div>
+            </div>
           </div>
 
           <!-- System 4: StreamChat AI Gateway -->
@@ -902,6 +1089,118 @@
                 <span class="m-val">Prometheus + Grafana Hooks</span>
               </div>
             </div>
+
+            <div class="system-postmortem">
+              <div class="postmortem-item">
+                <span class="pm-label">Critical Failure Mode Eliminated</span>
+                <span class="pm-desc">Vendor API 429 rate-limiting and connection dropouts killing user streaming sessions during high-concurrency traffic bursts.</span>
+              </div>
+              <div class="postmortem-item">
+                <span class="pm-label">System Compromise & Trade-Off</span>
+                <span class="pm-desc">Cached prompt embeddings at 0.92 cosine similarity threshold; accepted minor variance risk in exchange for 32% token savings and &lt;14ms response times.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Architectural Decision Matrix (The Ifs & The Buts) -->
+      <section id="tradeoffs" style="margin-bottom: 90px;">
+        <div class="section-title-wrap">
+          <span class="section-mono-tag">// 02. ARCHITECTURAL DECISION MATRIX</span>
+          <h2 class="section-h2">The "Ifs & The Buts": Production Trade-Offs</h2>
+          <p class="section-sub">Senior systems engineering is not about adopting popular tools — it is about commanding the trade-offs, failure modes, and degradation paths under real enterprise constraints.</p>
+        </div>
+
+        <div class="tradeoffs-grid">
+          
+          <!-- Tradeoff 1: RAG Strategy -->
+          <div class="tradeoff-card">
+            <div>
+              <div class="tradeoff-header">
+                <span class="tradeoff-domain">RETRIEVAL TOPOLOGY</span>
+                <span class="tradeoff-id">ADR-01 // RAG</span>
+              </div>
+              <h3 class="tradeoff-title">Dense Embeddings vs. Lexical-Semantic Hybrid Search</h3>
+              <div class="tradeoff-body">
+                <div class="clause-box clause-if">
+                  <strong>IF:</strong> You rely solely on dense vector embeddings (cosine similarity over dense embeddings)...
+                </div>
+                <div class="clause-box clause-but">
+                  <strong>BUT:</strong> Exact keyword precision collapses on alphanumeric part numbers, compliance clauses, and financial figures, producing high-confidence hallucinations on critical edge cases.
+                </div>
+                <div class="clause-box clause-res">
+                  <strong>RESOLUTION:</strong> Architected two-stage Hybrid Retrieval fusing BM25 lexical recall with ChromaDB/Pinecone semantic search via Reciprocal Rank Fusion (RRF), topped with a Cross-Encoder reranker enforcing strict score thresholds.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tradeoff 2: Agent Execution -->
+          <div class="tradeoff-card">
+            <div>
+              <div class="tradeoff-header">
+                <span class="tradeoff-domain">AGENT ORCHESTRATION</span>
+                <span class="tradeoff-id">ADR-02 // AGENTS</span>
+              </div>
+              <h3 class="tradeoff-title">Autonomous Execution vs. Deterministic Guardrails</h3>
+              <div class="tradeoff-body">
+                <div class="clause-box clause-if">
+                  <strong>IF:</strong> You allow autonomous LLM agents unrestrained tool-calling loops to refactor code or execute shell scripts...
+                </div>
+                <div class="clause-box clause-but">
+                  <strong>BUT:</strong> The model will inevitably hallucinate non-existent API parameters, corrupt repository state, or burn catastrophic token budgets in infinite recursive retry cycles.
+                </div>
+                <div class="clause-box clause-res">
+                  <strong>RESOLUTION:</strong> Enforced cyclic LangGraph state machines with typed Pydantic contracts, strict 3x retry ceilings with checkpointed state rollbacks, and mandatory Human-in-the-Loop gates before any mutating action.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tradeoff 3: Serving & Latency -->
+          <div class="tradeoff-card">
+            <div>
+              <div class="tradeoff-header">
+                <span class="tradeoff-domain">INFERENCE THROUGHPUT</span>
+                <span class="tradeoff-id">ADR-03 // INFERENCE</span>
+              </div>
+              <h3 class="tradeoff-title">Sub-500ms TTFT vs. Deep Reasoning Depth</h3>
+              <div class="tradeoff-body">
+                <div class="clause-box clause-if">
+                  <strong>IF:</strong> Enterprise users demand streaming real-time UX with sub-500ms Time-to-First-Token (TTFT)...
+                </div>
+                <div class="clause-box clause-but">
+                  <strong>BUT:</strong> Large frontier reasoning models incur 2-4 second TTFT latencies and external model APIs enforce aggressive 429 rate-limiting under peak concurrency.
+                </div>
+                <div class="clause-box clause-res">
+                  <strong>RESOLUTION:</strong> Built a high-performance FastAPI streaming gateway backed by Redis semantic vector caching (&lt; 15ms hit latency for &gt;0.92 cosine similarity) and circuit-breaker fallback routing to secondary models.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tradeoff 4: Monolith Migration -->
+          <div class="tradeoff-card">
+            <div>
+              <div class="tradeoff-header">
+                <span class="tradeoff-domain">DISTRIBUTED CONSISTENCY</span>
+                <span class="tradeoff-id">ADR-04 // ARCHITECTURE</span>
+              </div>
+              <h3 class="tradeoff-title">Distributed Transactions vs. Eventual Consistency</h3>
+              <div class="tradeoff-body">
+                <div class="clause-box clause-if">
+                  <strong>IF:</strong> Migrating mission-critical enterprise cores (Airtel Payments Bank / YES MADAM) into decoupled microservices...
+                </div>
+                <div class="clause-box clause-but">
+                  <strong>BUT:</strong> Distributed two-phase commit (2PC) transactions introduce catastrophic database lock contention, network serialization bottlenecks, and cascading availability failures.
+                </div>
+                <div class="clause-box clause-res">
+                  <strong>RESOLUTION:</strong> Engineered event-driven Saga Choreography with compensating rollback actions, CQRS read-write separation, and Kafka + Aerospike delay queues for guaranteed at-least-once processing.
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -916,17 +1215,17 @@
           <span class="term-label">root@d4rk-agent-z3r0: /system/evals</span>
         </div>
         <div class="term-content">
-          <div class="cmd-line">&gt; fde-eval --candidate "Siddharth Majhi" --focus "LLM_Architecture & Forward_Deployed"</div>
+          <div class="cmd-line">&gt; sys-audit --target "Siddharth Majhi" --mode "failure_domain_analysis"</div>
           <div class="term-out">
-            [+] VERIFIED EXPERIENCE: <span class="term-highlight">7+ Years Total</span> across Platform, AI, and Cloud Infrastructure<br>
-            [+] AI & LLM CORE: <span class="term-highlight">Pinecone, ChromaDB, Vertex AI, Ragas, LangChain, Hybrid RAG, Prompt Engineering</span><br>
-            [+] BACKEND & CLOUD: <span class="term-highlight">FastAPI, Python, Java Spring Boot, Go, AWS (Lambda, VPC, S3), GCP, Kubernetes, Docker</span><br>
-            [+] MESSAGING & DATA: <span class="term-highlight">Kafka, Aerospike DB, Redis Semantic Cache, Google Pub/Sub, gRPC with Envoy</span><br>
-            [+] FORWARD DEPLOYED FIT: <span class="term-highlight">Extensive experience handling legacy migrations, client-facing ambiguity, and enterprise security</span>
+            [AUDIT: PASS] <span class="term-highlight">Hallucination Mitigation:</span> Dual-stage RRF + Cross-Encoder reranker enforcing minimum cosine/lexical score floor<br>
+            [AUDIT: PASS] <span class="term-highlight">Agent Boundedness:</span> Cyclic LangGraph state machines with hard 3x rollback ceilings & Pydantic schema validation<br>
+            [AUDIT: PASS] <span class="term-highlight">Degradation Protocol:</span> Active circuit breakers dynamically fail over to secondary models under upstream 429 rate limits<br>
+            [AUDIT: PASS] <span class="term-highlight">Distributed State:</span> Event-driven Saga Choreography with Kafka-Aerospike delay queues replacing distributed lock cascades<br>
+            [AUDIT: VERDICT] <span class="term-highlight" style="color: var(--green);">STAFF SYSTEMS THINKER:</span> Demonstrated command of non-happy paths, recovery topologies, and enterprise compliance
           </div>
-          <div class="cmd-line">&gt; cat /etc/contact.json</div>
+          <div class="cmd-line">&gt; cat /proc/system_identity</div>
           <div class="term-out">
-            { "email": "yoshimitsu117@protonmail.com", "phone": "+91 8825107509", "github": "d4rk-agent-z3r0", "linkedin": "linkedin.com/in/siddharth-majhi" }
+            { "engineer": "Siddharth Majhi", "archetype": "Forward Deployed & Staff AI Systems Architect", "tenure": "7+ Years Enterprise", "contact": "yoshimitsu117@protonmail.com" }
           </div>
         </div>
       </section>
