@@ -172,32 +172,6 @@
       gap: 48px;
       align-items: center;
     }
-    .sys-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(0, 255, 157, 0.06);
-      border: 1px solid var(--border-glow);
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      padding: 6px 14px;
-      border-radius: 4px;
-      margin-bottom: 24px;
-      letter-spacing: 0.05em;
-    }
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--green);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--green);
-      animation: blink 2s infinite ease-in-out;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(1.1); }
-    }
     .hero h1 {
       font-size: 3.5rem;
       font-weight: 700;
@@ -707,10 +681,6 @@
       <section class="hero">
         <div class="hero-grid">
           <div>
-            <div class="sys-badge">
-              <span class="status-dot"></span>
-              SYS_STATUS: READY FOR FORWARD DEPLOYED & SENIOR LLM ROLES
-            </div>
             <h1>
               Siddharth <span class="hero-accent">Majhi</span>
             </h1>
